@@ -227,7 +227,26 @@
     </distributionManagement>
 
     <build>
-        <plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.gradle</groupId>
+                    <artifactId>gradle-enterprise-maven-extension</artifactId>
+                    <configuration>
+                        <gradleEnterprise>
+                            <normalization>
+                                <runtimeClassPath>
+                                    <ignoredFiles>
+                                        <ignoredFile>META-INF/jandex.idx</ignoredFile>
+                                    </ignoredFiles>
+                                </runtimeClassPath>
+                            </normalization>
+                        </gradleEnterprise>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+       <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>

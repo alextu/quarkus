@@ -23,6 +23,30 @@
                 <filtering>true</filtering>
             </testResource>
         </testResources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.gradle</groupId>
+                    <artifactId>gradle-enterprise-maven-extension</artifactId>
+                    <configuration>
+                        <gradleEnterprise>
+                            <plugins>
+                                <plugin>
+                                    <artifactId>maven-compiler-plugin</artifactId>
+                                    <inputs>
+                                        <properties>
+                                            <property>
+                                                <name>additionalClasspathElements</name>
+                                            </property>
+                                        </properties>
+                                    </inputs>
+                                </plugin>
+                            </plugins>
+                        </gradleEnterprise>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 
     <dependencies>

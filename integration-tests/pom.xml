@@ -28,6 +28,16 @@
     <build>
         <plugins>
             <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${version.surefire.plugin}</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <user.language>en</user.language>
+                        <user.region>GB</user.region>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <executions>
